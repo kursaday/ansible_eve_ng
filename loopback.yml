@@ -13,5 +13,5 @@
 
     - name: Add IP address to L888
       cisco.ios.ios_l3_interface:
-        name: Loopback888
-        ipv4: 192.168.255.88/32
+        name: Loopback999
+        ipv4: 192.168.255.99/32
