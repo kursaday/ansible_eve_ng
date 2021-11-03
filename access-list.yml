@@ -7,7 +7,7 @@
 
   tasks:
    - name: Configure ACL on Cisco Switch
-     ios_config:
+     cisco.ios.ios_config:
        authorize: yes
        lines:
          - access-list 99 permit 172.16.1.100
