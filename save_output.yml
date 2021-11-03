@@ -25,6 +25,6 @@
         -----
         {{ switch_config.stdout[1] }}
 
-        show snmp user
+        show ip int brief
         -----
         {{ switch_config.stdout[2] }}
