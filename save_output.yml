@@ -1,0 +1,22 @@
+---
+- hosts: routers
+  gather_facts: no
+  vars:
+    data_dir: foo
+  tasks:
+
+  - name: run commands to gather information
+    ios_command:
+      commands:
+      - show version
+      
+      
+    register: switch_config
+
+  - name: save collected infromation in data directory
+    copy:
+      dest: "output.txt"
+      content: |
+        show version
+        -----
+        {{ switch_config.stdout[0] }}
