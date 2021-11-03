@@ -17,6 +17,6 @@
           - show ip route
       register: output
 
-    - name: save output ~/ansible_eve_ng/outputs/
+    - name: save output ~/ansible_eve_ng/
       local_action: "copy content: '{{ config.stdout[0] }}' dest={{ dest_folder }}{{ inventory_hostname }}_show_output.txt"
 
