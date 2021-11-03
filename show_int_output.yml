@@ -14,7 +14,7 @@
       register: output
 
   tasks:
-    - name: save output ~/ansible_eve_ng/outputs/
-       local_action: "copy content= '{{ config.stdout[0] }}' dest={{ /root/ansible_eve_ng/outputs/}}_{{ inventory_hostname }}.txt"
+    - name: save output
+      local_action: "copy content='{{ config.stdout[0] }}' dest={{ /root/ansible_eve_ng/ }}{{ inventory_hostname }}.txt"
 
 
