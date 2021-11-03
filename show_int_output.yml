@@ -15,6 +15,6 @@
 
   tasks:
     - name: save output ~/ansible_eve_ng/outputs/
-      local_action: "copy content: '{{ config.stdout[0] }}' dest: "/root/ansible_eve_ng/outputs/show_run_{{ inventory_hostname }}.txt"
+       local_action: "copy content= '{{ config.stdout[0] }}' dest={{ /root/ansible_eve_ng/outputs/}}_{{ inventory_hostname }}.txt"
 
 
