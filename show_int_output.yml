@@ -6,6 +6,10 @@
   connection: network_cli
 
   tasks:
+  
+    - name: Task 0
+      file: path={{ dest_folder }} state=directory
+      
     - name: run show ip interface brief + ip route
       ios_command:
         commands:
@@ -13,8 +17,6 @@
           - show ip route
       register: output
 
-  tasks:
     - name: save output ~/ansible_eve_ng/outputs/
-       local_action: "copy content= '{{ config.stdout[0] }}' dest={{ /root/ansible_eve_ng/outputs/}}_{{ inventory_hostname }}.txt"
-
+      local_action: "copy content: '{{ config.stdout[0] }}' dest={{ dest_folder }}{{ inventory_hostname }}_show_output.txt"
 
