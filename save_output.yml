@@ -9,8 +9,8 @@
     ios_command:
       commands:
       - show version
-      
-      
+      - show running
+      - show ip int brief
     register: switch_config
 
   - name: save collected infromation in data directory
@@ -20,3 +20,11 @@
         show version
         -----
         {{ switch_config.stdout[0] }}
+
+        show running-config
+        -----
+        {{ switch_config.stdout[1] }}
+
+        show snmp user
+        -----
+        {{ switch_config.stdout[2] }}
