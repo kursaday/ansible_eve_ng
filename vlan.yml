@@ -5,8 +5,7 @@
   gather_facts: false
   connection: network_cli
 
-  tasks:
-	
+  tasks:	
     - name: Create vlan
       cisco.ios.ios_vlan:
       vlan_id: 100
