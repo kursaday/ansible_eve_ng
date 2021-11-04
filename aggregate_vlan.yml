@@ -5,7 +5,7 @@
   gather_facts: false
   connection: network_cli
 
-     tasks:
+    tasks:
      - name: Add vlan using aggregate
         cisco.ios.ios_vlan:
                  aggregate:                   
