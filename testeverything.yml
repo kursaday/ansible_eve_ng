@@ -1,0 +1,14 @@
+---
+
+- name: Cisco Vlan
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+    - name: Get facts
+      ios_facts:
+        gather_subset: all
+
+    - debug: msg="Serial Number is {{ ansible_net_serialnum }}"
