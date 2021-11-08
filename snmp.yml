@@ -1,0 +1,15 @@
+
+---
+
+- name: Cisco Vlan
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+  tasks:
+
+    - name: ensure that the desired snmp strings are present
+      ios_config:
+        commands:
+          - snmp-server community ansible-public RO
+          - snmp-server community ansible-private RW
+  
