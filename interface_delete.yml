@@ -11,7 +11,7 @@
       ios_interfaces:
         state: deleted
         config:
-          - name: Loopback888
+          - name: Loopback999
       register: ios_interface_output
 
     - name: "TASK 2: SYS >> DEBUG OUTPUT"
