@@ -8,7 +8,7 @@
   tasks:
   
     - name: "TASK 1: IOS >> Set some interfaces with merge"
-      ios_interfaces:
+      cisco.ios.ios_interfaces:
         state: deleted
         config:
           - name: Loopback999
