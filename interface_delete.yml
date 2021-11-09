@@ -17,3 +17,12 @@
     - name: "TASK 2: SYS >> DEBUG OUTPUT"
       debug:
         msg: "{{ ios_interface_output }}"
+  tasks:
+    - name: IOS >> Save Configuration to NVRAM
+      ios_config:
+        save_when: always
+      register: output
+
+    - name: DEBUG >> output
+      debug:
+        msg: "{{ output }}"
