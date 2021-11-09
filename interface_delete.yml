@@ -19,7 +19,7 @@
         msg: "{{ ios_interface_output }}"
   tasks:
     - name: IOS >> Save Configuration to NVRAM
-      ios_config:
+      cisco.ios.ios_interfaces:
         save_when: always
       register: output
 
