@@ -9,7 +9,7 @@
 
      - name: Merge provided configuration with device configuration
         cisco.ios.ios_interfaces:
-          config:
+         config:
           - name: Ethernet0/2
             description: Configured and Merged by Ansible Network
             enabled: true
