@@ -1,0 +1,19 @@
+---
+
+- name: Cisco Interface Delete
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+  
+    - name: "TASK 1: IOS >> Set some interfaces with merge"
+      ios_interfaces:
+        state: deleted
+        config:
+          - name: Loopback888
+      register: ios_interface_output
+
+    - name: "TASK 2: SYS >> DEBUG OUTPUT"
+      debug:
+        msg: "{{ ios_interface_output }}"
