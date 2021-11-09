@@ -1,4 +1,4 @@
- ---
+---
 
 - name: Cisco Interface Delete
   hosts: routers
