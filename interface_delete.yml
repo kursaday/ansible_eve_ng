@@ -15,8 +15,8 @@
             enabled: true
           - name: Ethernet0/3
             description: Configured and Merged by Ansible Network
-            mtu: 2800
-            enabled: false
+            mtu: 1499
+            enabled: true
             speed: 100
             duplex: full
         state: merged
