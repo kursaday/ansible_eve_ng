@@ -1,0 +1,29 @@
+---
+
+- name: Test command outputs
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+
+  tasks:
+    - name: "TASK 1: IOS >> Show commands"
+      ios_command:
+        commands:
+          - show run interface loopback 999
+          - ping 8.8.8.8 source loopback 999 repeat 20 size 1500
+          - ping 192.168.0.60 source loopback 999 repeat 20 size 1500
+      register: show_commands
+
+    - name: "TASK 2: Show all of the output"
+      debug:
+        msg: "{{ show_commands }}"
+
+    - name: "TASK 3: Pause for showing"
+      pause:
+        minutes: 1
+
+    - name: "TASK 2: SYS >> DEBUG to see loop"
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ show_commands['stdout'] }}"
